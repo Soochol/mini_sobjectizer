@@ -54,29 +54,25 @@ endif()
 # Installation
 # =============================================================================
 
-# Define list of all example targets
-set(EXAMPLE_TARGETS
-    01_beginner_tutorial
-    02_smart_factory_example 
-    03_autonomous_vehicle_example
-    04_medical_device_example
-    05_drone_control_example
-    06_advanced_macros_example
-    phase3_final_example 
-    simple_iot_example
+# Install example source files instead of binaries
+install(FILES
+    01_beginner_tutorial.cpp
+    02_smart_factory_example.cpp
+    03_autonomous_vehicle_example.cpp
+    04_medical_device_example.cpp
+    05_drone_control_example.cpp
+    06_advanced_macros_example.cpp
+    phase3_final_example.cpp
+    simple_iot_example.cpp
+    macro_demo_example.cpp
+    README.md
+    DESTINATION examples/mini_sobjectizer
 )
 
-# Install all examples
-install(TARGETS ${EXAMPLE_TARGETS}
-    RUNTIME DESTINATION bin/examples
-    COMPONENT examples
-)
-
-# Install conditional example if it exists
-if(TARGET safety_migration_example)
-    install(TARGETS safety_migration_example 
-        RUNTIME DESTINATION bin/examples
-        COMPONENT examples
+# Install conditional example source if it exists
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/safety_migration_example.cpp")
+    install(FILES safety_migration_example.cpp
+        DESTINATION examples/mini_sobjectizer
     )
 endif()
 

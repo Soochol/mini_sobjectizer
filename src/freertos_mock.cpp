@@ -1,4 +1,22 @@
-// freertos_mock.cpp - Mock FreeRTOS functions for host platform testing
+/**
+ * @file freertos_mock.cpp
+ * @brief FreeRTOS Mock Implementation for Host Platform Testing
+ * 
+ * FreeRTOS API mocking implementation for testing Mini SObjectizer 
+ * on host platforms (Linux/Windows/macOS).
+ * 
+ * Key features:
+ * - Dummy implementations of semaphore functions (always return success)
+ * - Task-related function simulations
+ * - Virtual implementations of time-related functions
+ * 
+ * Usage:
+ * - Automatically activated when compiled with UNIT_TEST=1
+ * - Enables host testing without actual FreeRTOS
+ * 
+ * @note This file is used for testing purposes only and is not used in actual embedded environments.
+ */
+
 #include <cstdlib>
 #include <cstdio>
 #include <cstdint>

@@ -112,7 +112,24 @@
       "Bash(curl:*)",
       "Bash(wget:*)",
       "Bash(./examples/01_beginner_tutorial)",
-      "Bash(git init:*)"
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git branch:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(./main)",
+      "Bash(~/.local/cmake/bin/cmake:*)",
+      "Bash(tar:*)",
+      "Bash(export:*)",
+      "Bash(./test_modular_compile)",
+      "Bash(./test_example_01)",
+      "Bash(./test_example_02)",
+      "Bash(./examples/03_autonomous_vehicle_example)",
+      "Bash(./test_modular_compile_v2)",
+      "Bash(./examples/05_drone_control_example:*)",
+      "Bash(build/examples/01_beginner_tutorial)",
+      "Bash(./build/examples/01_beginner_tutorial)"
     ],
     "deny": []
   }

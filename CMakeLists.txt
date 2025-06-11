@@ -91,13 +91,28 @@ if(MINI_SO_BUILD_TESTS)
     add_subdirectory(test)
 endif()
 
-# Installation rules
+# Installation rules - Source Distribution
+# Install header files
+install(FILES ${MINI_SO_HEADERS}
+    DESTINATION include/mini_sobjectizer
+)
+
+# Install source files for user compilation
+install(FILES ${MINI_SO_SOURCES}
+    DESTINATION src/mini_sobjectizer
+)
+
+# Install FreeRTOS mock for testing
+install(FILES src/freertos_mock.cpp
+    DESTINATION src/mini_sobjectizer
+)
+
+# Install library target (optional - users can compile directly from source)
 install(TARGETS mini_sobjectizer
     EXPORT mini_sobjectizer_targets
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
-    PUBLIC_HEADER DESTINATION include/mini_sobjectizer
 )
 
 install(EXPORT mini_sobjectizer_targets
@@ -125,6 +140,8 @@ install(FILES
     "${CMAKE_CURRENT_BINARY_DIR}/mini_sobjectizer_config_version.cmake"
     DESTINATION lib/cmake/mini_sobjectizer
 )
+
+# Note: SDK example files were removed during cleanup
 
 # Print configuration summary
 message(STATUS "")

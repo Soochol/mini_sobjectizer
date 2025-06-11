@@ -1,5 +1,23 @@
-// main.cpp - Mini SObjectizer v3.0 Final - Production Example
-// This is the main entry point for embedded platforms (STM32, ESP32, etc.)
+/**
+ * @file main.cpp
+ * @brief Mini SObjectizer v3.0 Production IoT Example
+ * 
+ * Complete IoT application example for real embedded systems.
+ * 
+ * System architecture:
+ * - IoTSensorAgent: Temperature/humidity/pressure sensor data collection and broadcasting
+ * - ActuatorAgent: Motor/valve control and emergency stop handling
+ * - ControlAgent: Automatic control logic and sensor data-based decision making
+ * 
+ * Key features:
+ * - 100% message-based communication (no direct calls between agents)
+ * - Real-time safety monitoring (automatic stop on overheating detection)
+ * - Watchdog-based liveness monitoring
+ * - FreeRTOS task-based multithreading (embedded environment)
+ * - Host simulation mode (UNIT_TEST=1)
+ * 
+ * @note Supports both actual hardware (STM32, ESP32, etc.) and host test environments
+ */
 
 #include "mini_sobjectizer/mini_sobjectizer.h"
 #include <cstdio>

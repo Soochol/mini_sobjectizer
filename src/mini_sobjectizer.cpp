@@ -1,11 +1,29 @@
+/**
+ * @file mini_sobjectizer.cpp
+ * @brief Mini SObjectizer v3.0 Core Implementation
+ * 
+ * Core implementation components:
+ * - Environment: Singleton agent manager
+ * - Agent: Base actor class for message handling
+ * - MessageQueue: Lock-free circular buffer
+ * - Emergency System: Real-time failure recovery
+ * - Metrics: Performance monitoring
+ * 
+ * Design principles:
+ * - Zero-overhead abstractions
+ * - RAII (Resource Acquisition Is Initialization)
+ * - Lock-free data structures
+ * - Cache-friendly memory layout
+ */
+
 #include "mini_sobjectizer/mini_sobjectizer.h"
 #include <cstring>
-#include <cstdio>  // snprintf 사용
+#include <cstdio>  // Safe string formatting with snprintf
 
 namespace mini_so {
 
-// Static member initialization 제거 (SIOF-Safe Meyers' Singleton 사용)
-// InitializationGuard가 상태 관리를 대신함
+// Using Meyers' Singleton pattern to prevent SIOF (Static Initialization Order Fiasco)
+// InitializationGuard safely manages global object initialization order
 
 // ============================================================================
 // Emergency System Implementation - 현대적 Fail-Safe
