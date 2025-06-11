@@ -1,0 +1,10 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+
+# Check if we're building for embedded or host platform
+if(NOT TARGET mini_sobjectizer::mini_sobjectizer)
+    include("${CMAKE_CURRENT_LIST_DIR}/mini_sobjectizer_targets.cmake")
+endif()
+
+check_required_components(mini_sobjectizer)
